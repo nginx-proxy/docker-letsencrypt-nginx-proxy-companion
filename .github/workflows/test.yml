@@ -48,7 +48,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Build patched nginx-proxy Image
         run: docker build -t "nginxproxy/nginx-proxy:latest" ./test/setup/nginx-proxy
-      - name: Build patched docker-gen Image
+      - name: Checkout jwilder/docker-gen
+        uses: actions/checkout@v2
+        with:
+          repository: jwilder/docker-gen
+          path: test/setup/docker-gen
+      - name: Build docker-gen Image
         run: docker build -t "jwilder/docker-gen:latest" ./test/setup/docker-gen
       - name: List Docker Images
         run: docker images
