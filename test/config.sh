@@ -15,6 +15,7 @@ globalTests+=(
 	container_restart
 	permissions_default
 	permissions_custom
+	networks_segregation
 	symlinks
 )
 
